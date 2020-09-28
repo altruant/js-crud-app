@@ -2,12 +2,13 @@ const BASE_URL = 'http://tiny-lasagna-server.herokuapp.com/collections/cohort-co
 
 const $container = document.querySelector('ul');
 const $form = document.querySelector('form#chatForm')
-let html = '';
-
+const $deleteButton = document.querySelector('.iconify')
 
 function buildHTML(data) {
+  let html = '';
+
   data.forEach(function(item){
-    html += `<li><span class="username">${item.username}</span>: <span class="message">${item.message}</span></li>`
+    html += `<li><span class="username">${item.username}</span>: <span class="message">${item.message}</span><span onclick=deleteMessage('${item._id}') class="iconify" data-icon="mdi:trash-can" data-inline="false"></span></li>`
   });
   $container.innerHTML = html;
 }
@@ -30,6 +31,15 @@ function sendMessage(data) {
   });
 }
 
+function deleteMessage(id){
+  fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => response.json());
+}
+
+
+
 $form.addEventListener('submit', e => {
   e.preventDefault();
 
@@ -42,6 +52,6 @@ $form.addEventListener('submit', e => {
   }
 
   sendMessage(newMessage);
-})
+});
 
-fetchChat();
+setInterval(fetchChat, 1000);

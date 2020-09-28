@@ -7,3 +7,10 @@ $cinnabar: #DB4C40;
 
 $title-font: 'DM Serif Display', serif;
 $body-font: 'Roboto', sans-serif;
+
+@media (min-width: 720px) {
+
+}
+body {
+  display: inline-block;
+}

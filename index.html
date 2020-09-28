@@ -4,22 +4,26 @@
     <meta charset="utf-8">
     <title>Simple Messaging App</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g==" crossorigin="anonymous" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
-    <div class="title"><h2>CCS.chat</h2></div>
+    <div class="app-title"><h2>CCS.chat</h2></div>
 
-  <div id="message-display">
-    <ul id="message-list">
-    ...fetching messages
-    </ul>
-  </div>
-    <form id="chatForm">
-      <input type="text" id="message" name="message">
-      <button type="submit" id='submit'>Submit</button>
-    </form>
-
+    <div id="message-display">
+      <ul id="message-list">
+      ...fetching messages
+      </ul>
+    </div>
+    <div id="chat-box">
+      <form id="chatForm">
+        <input type="text" id="message" name="message">
+        <button type="submit" id='submit'>Submit</button>
+      </form>
+    </div>
     <script src="./main.js" charset="utf-8"></script>
   </body>
 </html>
